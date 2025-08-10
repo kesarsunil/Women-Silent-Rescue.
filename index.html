@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Silent Rescue</title>
+    <link rel="stylesheet" href="stylessss.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <i data-lucide="heart-handshake"></i>
+        <span class="logo-text">WSR</span>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-title">
+                    <span>Women</span>
+                    <span>Silent</span>
+                    <span>Rescue</span>
+                </h1>
+                <p class="hero-text">Empowering women through confidential support and immediate assistance. Your safety is our priority.</p>
+                <div class="sticker-container">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100&h=100&fit=crop" alt="Support 1" class="sticker">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=100&h=100&fit=crop" alt="Support 2" class="sticker">
+                    <img src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=100&h=100&fit=crop" alt="Support 3" class="sticker">
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=800&fit=crop" alt="Women Empowerment" class="main-image">
+            </div>
+        </div>
+
+        <div class="grid">
+            <button class="box card-3d" onclick="handleUserClick()">
+                <div class="box-image">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop" alt="Get Help">
+                </div>
+                <i data-lucide="heart"></i>
+                <h2>Get Help Now</h2>
+                <p>Access immediate support and assistance services</p>
+            </button>
+
+            <button class="box card-3d" onclick="handleActionsClick()">
+                <div class="box-image">
+                    <img src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=400&h=300&fit=crop" alt="Support Portal">
+                </div>
+                <i data-lucide="shield-heart"></i>
+                <h2>Support Portal</h2>
+                <p>For support workers and authorized personnel</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" class="hidden">
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <i data-lucide="home"></i>
+                </div>
+                <div class="nav-links">
+                    <a href="#" onclick="showPage('home')" class="nav-link">
+                        <i data-lucide="layout-dashboard"></i>
+                        Home
+                    </a>
+                    <a href="#" onclick="showPage('complaint')" class="nav-link">
+                        <i data-lucide="file-text"></i>
+                        Complaint
+                    </a>
+                    <a href="#" onclick="showPage('emergency')" class="nav-link">
+                        <i data-lucide="phone-call"></i>
+                        Emergency
+                    </a>
+                    <a href="#" onclick="showPage('cyber')" class="nav-link">
+                        <i data-lucide="shield-alert"></i>
+                        Cyber
+                    </a>
+                </div>
+                <button onclick="showPage('issues')" class="issues-btn">
+                    <i data-lucide="list"></i>
+                    Issues Raised
+                </button>
+            </div>
+        </nav>
+
+        <!-- Pages -->
+        <div id="home" class="page">
+            <div class="home-container">
+                <div class="home-content">
+                    <h1>Welcome to Issue Management System</h1>
+                    <p class="home-description">
+                        Our platform is dedicated to providing comprehensive support and assistance
+                        to women facing various challenges. We offer multiple channels for reporting
+                        issues and seeking help, ensuring your voice is heard and your concerns are
+                        addressed promptly.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i data-lucide="check-circle"></i>
+                            <span>24/7 Emergency Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="shield"></i>
+                            <span>Secure & Confidential</span>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="clock"></i>
+                            <span>Quick Response Time</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=800&fit=crop" alt="Women Support">
+                </div>
+            </div>
+
+            <!-- Add SOS Box Section -->
+            <div class="sos-section">
+                <div class="sos-card">
+                    <div class="sos-header">
+                        <h2>Emergency SOS</h2>
+                        <p>Click the button below for immediate emergency assistance</p>
+                    </div>
+                    
+                    <button id="sosButton" class="sos-button" onclick="handleSOSClick()">
+                        <i data-lucide="alert-circle"></i>
+                        SOS EMERGENCY
+                    </button>
+
+                    <div id="alertMessage" class="alert hidden">
+                        Alert has been raised. Emergency services have been notified.
+                        Redirecting to issues page...
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card card-3d" onclick="showPage('complaint')">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop" alt="File Complaint">
+                    </div>
+                    <i data-lucide="file-text"></i>
+                    <h2>File Complaint</h2>
+                    <p>Submit detailed complaints about any issues or concerns</p>
+                </div>
+                <div class="service-card card-3d" onclick="showPage('emergency')">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=400&h=300&fit=crop" alt="Emergency Contact">
+                    </div>
+                    <i data-lucide="phone-call"></i>
+                    <h2>Emergency Contact</h2>
+                    <p>Quick access to emergency services and support</p>
+                </div>
+                <div class="service-card card-3d" onclick="showPage('cyber')">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=300&fit=crop" alt="Cyber Security">
+                    </div>
+                    <i data-lucide="shield-alert"></i>
+                    <h2>Cyber Security</h2>
+                    <p>Report cyber security incidents and get assistance</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="complaint" class="page hidden">
+            <h1>File a Complaint</h1>
+            <form id="complaintForm" onsubmit="handleComplaintSubmit(event)" class="form-container">
+                <div class="form-group">
+                    <label for="complaintText">Complaint Details</label>
+                    <textarea id="complaintText" rows="6" required placeholder="Please describe your complaint in detail..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Complaint</button>
+            </form>
+        </div>
+
+        <div id="emergency" class="page hidden">
+            <h1>Emergency Contact</h1>
+            <form id="emergencyForm" onsubmit="handleEmergencySubmit(event)" class="form-container">
+                <div class="form-group">
+                    <label for="emergencyPhone">Mobile Number</label>
+                    <input type="tel" id="emergencyPhone" pattern="[0-9]{10}" required placeholder="Enter your mobile number">
+                    <p class="help-text">Please enter a valid 10-digit mobile number</p>
+                </div>
+                <button type="submit" class="submit-btn">Submit Emergency Contact</button>
+            </form>
+        </div>
+
+        <div id="cyber" class="page hidden">
+            <h1>Cyber Security Issue</h1>
+            <form id="cyberForm" onsubmit="handleCyberSubmit(event)" class="form-container">
+                <div class="form-group">
+                    <label for="cyberPhone">Mobile Number</label>
+                    <input type="tel" id="cyberPhone" pattern="[0-9]{10}" required placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="cyberProblem">Problem Description</label>
+                    <textarea id="cyberProblem" rows="4" required placeholder="Describe the cyber security issue..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Issue</button>
+            </form>
+        </div>
+
+        <div id="issues" class="page hidden">
+            <h1>Issues Raised</h1>
+            <div id="issuesList" class="issues-grid"></div>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Enter Password</h3>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <p id="passwordError" class="error-text hidden">Incorrect password</p>
+            <div class="modal-buttons">
+                <button onclick="closePasswordModal()" class="cancel-btn">Cancel</button>
+                <button onclick="handlePasswordSubmit()" class="submit-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
